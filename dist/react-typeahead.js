@@ -926,7 +926,7 @@ var TypeaheadOption = React.createClass({
     customClasses: React.PropTypes.object,
     customValue: React.PropTypes.string,
     onClick: React.PropTypes.func,
-    children: React.PropTypes.string,
+    children: React.PropTypes.node,
     hover: React.PropTypes.bool
   },
 
@@ -1044,7 +1044,7 @@ var TypeaheadSelector = React.createClass({
 
     var results = this.props.options.map(function (result, i) {
       var displayString = this.props.displayOption(result, i);
-      var uniqueKey = displayString + '_' + i;
+      var uniqueKey = (typeof displayNode === 'string' ? displayNode : displayNode.key) + '_' + i;
       return React.createElement(
         TypeaheadOption,
         { ref: uniqueKey, key: uniqueKey,
