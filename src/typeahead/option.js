@@ -9,7 +9,7 @@ var TypeaheadOption = React.createClass({
     customClasses: React.PropTypes.object,
     customValue: React.PropTypes.string,
     onMouseDown: React.PropTypes.func,
-    children: React.PropTypes.string,
+    children: React.PropTypes.node,
     hover: React.PropTypes.bool
   },
 
